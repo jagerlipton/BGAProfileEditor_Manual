@@ -66,9 +66,9 @@ void serialParser()  // здесь распознаются команды из 
 {
   if (Serial.available()>0) {
     String data = Serial.readStringUntil('\n');
-        
+       
     if (data.indexOf("COMMAND_GET_PROFILE")!=-1){exportProfile(); serialPrintReady(); }
-    if (data.indexOf("SHORT_PROFILE")!=-1){/*parsingShort(data);*/serialPrintReady();}
+    if (data.indexOf("SHORT_PROFILE")!=-1){parsingShort(data);serialPrintReady();}
     if (data.indexOf("JSON_PROFILE")!=-1){parsingJSON(data); serialPrintReady(); }
     if (data.indexOf("COMMAND_SAVE_PROFILE")!=-1){saveProfile(); serialPrintReady();  }
     
